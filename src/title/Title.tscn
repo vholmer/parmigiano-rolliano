@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwkjglsnyy0y8"]
+
+[ext_resource type="Texture2D" uid="uid://66hmrlopo6uh" path="res://gfx/title/gorgonzola.png" id="1"]
+[ext_resource type="AudioStream" uid="uid://c2jtwk5tquv7i" path="res://sfx/extra_cheese.wav" id="2"]
+[ext_resource type="Script" path="res://src/title/Title.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://b8speete2uhhg" path="res://gfx/title/gorgonzola_new.png" id="3_kd6xb"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("3")
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Splash" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NewSplash" type="TextureRect" parent="."]
+offset_left = -415.0
+offset_top = -239.0
+offset_right = 225.0
+offset_bottom = 121.0
+scale = Vector2(2.30471, 2.30471)
+texture = ExtResource("3_kd6xb")
+
+[node name="ExtraCheese" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")

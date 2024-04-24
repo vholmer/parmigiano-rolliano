@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://hw4ptguhafc2"]
+
+[ext_resource type="Script" path="res://src/hill/Hill.gd" id="1_gvjqd"]
+[ext_resource type="PackedScene" uid="uid://5xj424mtfb2c" path="res://src/player/Player.tscn" id="1_uk50o"]
+
+[node name="Hill" type="Node2D"]
+script = ExtResource("1_gvjqd")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.145098, 0.807843, 0.298039, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_uk50o")]
+position = Vector2(312, 176)

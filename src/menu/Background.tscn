@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0cj7l610kpy8"]
+
+[ext_resource type="Texture2D" uid="uid://u133qbww7apr" path="res://gfx/menu/menuBackground.png" id="1_0q5nu"]
+[ext_resource type="Script" path="res://src/menu/Background.gd" id="1_66miq"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_66miq")
+
+[node name="Back" type="TextureRect" parent="."]
+offset_right = 1560.0
+offset_bottom = 360.0
+texture = ExtResource("1_0q5nu")

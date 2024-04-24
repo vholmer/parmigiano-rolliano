@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwq3ioy57pl72"]
+
+[ext_resource type="Script" path="res://src/spawner/Spawner.gd" id="1_4si41"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_4si41")
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DecorationTimer" type="Timer" parent="."]
+
+[node name="CloudTimer" type="Timer" parent="."]
+
+[node name="PickupTimer" type="Timer" parent="."]
+wait_time = 10.0

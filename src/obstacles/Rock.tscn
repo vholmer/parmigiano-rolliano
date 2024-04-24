@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfdamfo8tx1rj"]
+
+[ext_resource type="Texture2D" uid="uid://dun1wr4uq4mu4" path="res://gfx/obstacles/sprRock.png" id="1_mchn3"]
+[ext_resource type="Script" path="res://src/obstacles/Obstacle.gd" id="1_p5ovu"]
+
+[node name="Rock" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_p5ovu")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_mchn3")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, 6)
+rotation = 1.57079
+polygon = PackedVector2Array(-4.99996, -16, -8.99996, -20, -8.99998, -11, -4.99999, -4.00001, -5.00003, 14, -3.52859e-05, 16, 5.00001, -4.99999)

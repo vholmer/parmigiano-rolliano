@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfbjhehqt3ktc"]
+
+[ext_resource type="Script" path="res://src/gameover/GameOver.gd" id="1_7p7ga"]
+[ext_resource type="Texture2D" uid="uid://de5mry0up3lb8" path="res://gfx/gameover/gameOver.png" id="1_m4an2"]
+[ext_resource type="AudioStream" uid="uid://dfua7ndqy4f0r" path="res://music/menu.ogg" id="2_pfjx0"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_7p7ga")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_m4an2")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pfjx0")
+volume_db = -5.0
+autoplay = true

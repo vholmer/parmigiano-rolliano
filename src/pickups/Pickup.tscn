@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcdhkts3v8n1j"]
+
+[ext_resource type="Script" path="res://src/pickups/Pickup.gd" id="1_in0c1"]
+
+[node name="Pickup" type="AnimatableBody2D"]
+script = ExtResource("1_in0c1")
+
+[node name="Sprite" type="Sprite2D" parent="."]

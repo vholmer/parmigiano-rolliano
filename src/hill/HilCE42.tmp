@@ -1,0 +1,115 @@
+[gd_scene load_steps=17 format=3 uid="uid://hw4ptguhafc2"]
+
+[ext_resource type="Script" path="res://src/hill/Hill.gd" id="1_gvjqd"]
+[ext_resource type="PackedScene" uid="uid://5xj424mtfb2c" path="res://src/player/Player.tscn" id="1_uk50o"]
+[ext_resource type="Texture2D" uid="uid://bw3rkf5r41x0m" path="res://gfx/background/sprHillAndCastle.png" id="2_wrlpw"]
+[ext_resource type="AudioStream" uid="uid://dvnq4oupqis3h" path="res://music/hill.ogg" id="3_qwrm7"]
+[ext_resource type="PackedScene" uid="uid://bwq3ioy57pl72" path="res://src/spawner/Spawner.tscn" id="4_lf6ov"]
+[ext_resource type="Texture2D" uid="uid://bk4m4tj1qc13u" path="res://gfx/background/sprFlag.png" id="6_feyi6"]
+[ext_resource type="Script" path="res://src/hill/Flag.gd" id="7_t7kat"]
+[ext_resource type="PackedScene" uid="uid://cved2u6ry8jgb" path="res://src/crowd/Crowd.tscn" id="8_weqfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7iek"]
+atlas = ExtResource("6_feyi6")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6xoe"]
+atlas = ExtResource("6_feyi6")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dcud"]
+atlas = ExtResource("6_feyi6")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agbyh"]
+atlas = ExtResource("6_feyi6")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lgd6"]
+atlas = ExtResource("6_feyi6")
+region = Rect2(72, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mil10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7iek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6xoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dcud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agbyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lgd6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_odd3h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -109, 343, 0, 0, 0, 0, 54, 49)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8o62n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 115, 7, 0, 0, 0, 0, 7, 46, 0, 0, 0, 0, 8, 75, 0, 0, 0, 0, 143, 23, 0, 0, 0, 0, 164, 43, 0, 0, 0, 0, 13, 107)
+}
+point_count = 6
+
+[node name="Hill" type="StaticBody2D"]
+script = ExtResource("1_gvjqd")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.690196, 0.85098, 0.984314, 1)
+
+[node name="Castle" type="Sprite2D" parent="."]
+position = Vector2(539, 161)
+texture = ExtResource("2_wrlpw")
+
+[node name="Flag" type="AnimatedSprite2D" parent="Castle"]
+position = Vector2(36, -105)
+sprite_frames = SubResource("SpriteFrames_mil10")
+frame_progress = 0.919716
+script = ExtResource("7_t7kat")
+
+[node name="Player" parent="." instance=ExtResource("1_uk50o")]
+position = Vector2(312, 176)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, 1, 114, 0, 640, 265, 640, 357, 0, 359, 0, 8, -15, 8, -14, 373, 675, 377, 662, -11, -27, -19, -25, 10)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qwrm7")
+volume_db = -10.0
+
+[node name="Spawner" parent="." instance=ExtResource("4_lf6ov")]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+position = Vector2(636, 253)
+curve = SubResource("Curve2D_odd3h")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(-109, 343)
+rotation = -1.06456
+
+[node name="Crowd" parent="." instance=ExtResource("8_weqfq")]
+position = Vector2(59, 47)
+
+[node name="RunnerSpawnPath" type="Path2D" parent="."]
+position = Vector2(-54, -37)
+curve = SubResource("Curve2D_8o62n")
+
+[node name="RunnerSpawnLocation" type="PathFollow2D" parent="RunnerSpawnPath"]
+position = Vector2(115, 7)
+rotation = 2.79505

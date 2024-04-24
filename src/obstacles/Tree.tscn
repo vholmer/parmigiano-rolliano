@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7j2j5opg4wbl"]
+
+[ext_resource type="Script" path="res://src/obstacles/Obstacle.gd" id="1_ket46"]
+[ext_resource type="Texture2D" uid="uid://bopom34nxhfvp" path="res://gfx/obstacles/sprTree.png" id="2_mbmtr"]
+
+[node name="Tree" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ket46")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(13.9001, -26)
+texture = ExtResource("2_mbmtr")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2.90014, 3)
+rotation = 1.57079
+polygon = PackedVector2Array(-0.99995, -8.00001, -8.99998, -3.00006, -14, -2.00009, -12.0001, 8.99992, -4.00006, 8.99997, 0.999905, 15, 5.00001, -4.99999)

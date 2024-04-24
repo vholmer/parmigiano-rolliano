@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://hw4ptguhafc2"]
+
+[ext_resource type="Script" path="res://src/hill/Hill.gd" id="1_gvjqd"]
+[ext_resource type="PackedScene" uid="uid://5xj424mtfb2c" path="res://src/player/Player.tscn" id="1_uk50o"]
+[ext_resource type="AudioStream" uid="uid://dvnq4oupqis3h" path="res://music/hill.ogg" id="3_qwrm7"]
+
+[node name="Hill" type="StaticBody2D"]
+script = ExtResource("1_gvjqd")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.145098, 0.807843, 0.298039, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_uk50o")]
+position = Vector2(312, 176)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, 1, 114, 0, 640, 265, 640, 357, 0, 359, 0, 8, -15, 8, -14, 373, 675, 377, 662, -11, -27, -19, -25, 10)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qwrm7")
+volume_db = -10.0
+autoplay = true

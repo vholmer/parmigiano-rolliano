@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgksrpqhm0sb3"]
+
+[ext_resource type="Script" path="res://src/hill/Ground.gd" id="1_fdx5h"]
+[ext_resource type="Texture2D" uid="uid://d0gwhyf7i8cjl" path="res://gfx/hill/grass_slope.png" id="1_yiie6"]
+[ext_resource type="Texture2D" uid="uid://w7xruplcvtip" path="res://gfx/hill/grass_square.png" id="2_gy556"]
+
+[node name="Ground" type="Node2D"]
+script = ExtResource("1_fdx5h")
+
+[node name="Edge" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(227, 114)
+texture = ExtResource("1_yiie6")
+
+[node name="Mid" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(227, 341)
+texture = ExtResource("2_gy556")
+
+[node name="Bottom" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(227, 568)
+texture = ExtResource("2_gy556")
+
+[node name="BottomLeft" type="Sprite2D" parent="."]
+position = Vector2(-227, 568)
+texture = ExtResource("2_gy556")
+
+[node name="MidLeft" type="Sprite2D" parent="."]
+position = Vector2(-227, 341)
+texture = ExtResource("2_gy556")
+
+[node name="TopLeft" type="Sprite2D" parent="."]
+position = Vector2(-227, 114)
+texture = ExtResource("2_gy556")

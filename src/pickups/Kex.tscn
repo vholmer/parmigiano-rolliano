@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pcstv4u4e6j"]
+
+[ext_resource type="Script" path="res://src/pickups/Pickup.gd" id="1_ly3vc"]
+[ext_resource type="Texture2D" uid="uid://b3xyho3ambwnb" path="res://gfx/pickups/kex.png" id="2_4rd58"]
+
+[node name="Kex" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_ly3vc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_4rd58")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(1.43242, 1.50887)
+polygon = PackedVector2Array(0, -9, -17, 0, -3, 8, 15, -2)

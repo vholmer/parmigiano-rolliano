@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drcm06w30fifk"]
+
+[ext_resource type="Texture2D" uid="uid://cge848ci0rgb2" path="res://gfx/obstacles/bush.png" id="1_3a08k"]
+[ext_resource type="Script" path="res://src/obstacles/Obstacle.gd" id="1_48khb"]
+
+[node name="Bush" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_48khb")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_3a08k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-11, -21, -32, -9, -21, 1, -15, -1, -14, 5, -7, 9, -2, 6, -11, -1, -2, -9, -2, -13, -2, -17, -9, -22)
