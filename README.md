@@ -17,7 +17,7 @@ Space - Jump
 
 Collect jars of jam and marmalade to maximize your taste to be accepted by the almighty Mozz!
 
-# :tools: Tools
+# Tools
 
 * [Godot](https://godotengine.org/)
 * [Aseprite](https://www.aseprite.org/)
